@@ -9,13 +9,155 @@
     <link rel="stylesheet" href="Layout.css">
     <title>Histogram</title>
 </head>
-<body>
-    <header>
-        <nav class="Menu">
-            <a href="Layout.html"></a>
-            <a href="Layout.html">Histogram</a>
-        </nav>
-    </header>
-    
+<!-- Ícones reutilizáveis -->
+<svg class="sprite" width="0" height="0" aria-hidden="true">
+  <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.3C1.2 8.4 3 5 6.4 5c2 0 3.5 1.1 5.6 3.2C14.1 6.1 15.6 5 17.6 5 21 5 22.8 8.4 21.5 11.7 19.5 16.4 12 21 12 21z"/></symbol>
+  <symbol id="comment" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.4A8.5 8.5 0 1 1 21 11.5z"/></symbol>
+  <symbol id="send" viewBox="0 0 24 24"><path d="M22 3 2 10.5l7.5 3 3 7.5L22 3zM9.5 13.5 22 3"/></symbol>
+  <symbol id="save" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4.5L6 21z"/></symbol>
+  <symbol id="grid" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></symbol>
+  <symbol id="reel" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M3 9h18M9 3l3 6M15 3l3 6M10 13l5 3-5 3z"/></symbol>
+  <symbol id="tag" viewBox="0 0 24 24"><path d="M4 4h16v10l-8 7-8-7z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="home" viewBox="0 0 24 24"><path d="M3 11 12 3l9 8v10h-6v-6H9v6H3z"/></symbol>
+  <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-5-5"/></symbol>
+  <symbol id="plus" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></symbol>
+  <symbol id="x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+  <symbol id="more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.5" class="f"/><circle cx="12" cy="12" r="1.5" class="f"/><circle cx="19" cy="12" r="1.5" class="f"/></symbol>
+  <symbol id="smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2.5 4 2.5 4-2.5 4-2.5M9 9.5h.01M15 9.5h.01"/></symbol>
+  <symbol id="stack" viewBox="0 0 24 24"><rect x="3" y="7" width="14" height="14" rx="2"/><path d="M7 3h12a2 2 0 0 1 2 2v12"/></symbol>
+</svg>
+
+<!-- Barra superior -->
+<div class="topbar">
+  <span class="logo">Histagram</span>
+  <div class="search"><svg class="i"><use href="#search"/></svg>Pesquisar</div>
+  <div class="topicons">
+    <svg class="i"><use href="#home"/></svg>
+    <svg class="i"><use href="#plus"/></svg>
+    <svg class="i"><use href="#heart"/></svg>
+  </div>
+</div>
+
+<main class="page">
+  <!-- A. Identidade do perfil -->
+  <section class="profile">
+    <div class="pic-col">
+      <div class="pic"><div class="in">P<img src="paine_retrato.jpg" alt="Retrato de Thomas Paine" onerror="this.remove()"></div></div>
+    </div>
+    <div class="info">
+      <div class="l1">
+        <h1 class="uname">[-Mano_Thomas6767-]</h1>
+        <a class="btn" href="#">Seguir</a>
+        <a class="btn g" href="#">Mensagem</a>
+        <svg class="i dots"><use href="#more"/></svg>
+      </div>
+      <div class="l2">
+        <span><b>3</b> publicações</span>
+        <span><b>1776</b> seguidores</span>
+        <span><b>13</b> a seguir</span>
+      </div>
+      <div class="fullname">Thomas Paine</div>
+      <div class="cat">Pensador político e escritor</div>
+      <div class="bio">📜 Autor de <span class="tag">Common Sense</span> e <span class="tag">Rights of Man</span>
+Thetford, 1737 – Nova Iorque, 1809
+🇫🇷 Cidadão honorário de França
+<span class="q">«O mundo é o meu país e fazer o bem é a minha religião.»</span></div>
+    </div>
+  </section>
+
+  <!-- Destaques -->
+  <div class="highlights">
+    <div class="hl"><div class="c"><span>📜</span></div><small>Common Sense</small></div>
+    <div class="hl"><div class="c"><span>🇺🇸</span></div><small>América</small></div>
+    <div class="hl"><div class="c"><span>🇫🇷</span></div><small>França</small></div>
+    <div class="hl"><div class="c"><span>🔒</span></div><small>Prisão</small></div>
+    <div class="hl"><div class="c"><span>✨</span></div><small>Deísmo</small></div>
+  </div>
+
+  <!-- Separadores -->
+  <div class="tabs">
+    <div class="tab on"><svg class="i"><use href="#grid"/></svg><span>Publicações</span></div>
+    <div class="tab"><svg class="i"><use href="#reel"/></svg><span>Reels</span></div>
+    <div class="tab"><svg class="i"><use href="#tag"/></svg><span>Marcadas</span></div>
+  </div>
+
+  <!-- B. Grelha com as três publicações -->
+  <section class="grid">
+    <a class="tile" href="#p1">
+      <div class="ph">retrato de Thomas Paine</div>
+      <img src="paine_retrato.jpg" alt="Retrato de Thomas Paine" onerror="this.remove()">
+      <div class="over"><span><svg class="i f"><use href="#heart"/></svg>1 774</span><span><svg class="i f"><use href="#comment"/></svg>13</span></div>
+    </a>
+    <a class="tile" href="#p2">
+      <div class="ph">capa de Common Sense</div>
+      <img src="common_sense.jpg" alt="Capa de Common Sense, 1776" onerror="this.remove()">
+      <div class="over"><span><svg class="i f"><use href="#heart"/></svg>1 776</span><span><svg class="i f"><use href="#comment"/></svg>47</span></div>
+    </a>
+    <a class="tile" href="#p3">
+      <div class="ph">imagem da época</div>
+      <img src="revolucoes.jpg" alt="Imagem da época das revoluções" onerror="this.remove()">
+      <div class="over"><span><svg class="i f"><use href="#heart"/></svg>1 792</span><span><svg class="i f"><use href="#comment"/></svg>94</span></div>
+    </a>
+  </section>
+
+  <footer>Histagram · Trabalho de História · Figura: Thomas Paine (1737–1809)</footer>
+</main>
+
+<!-- ============ Publicação 1 ============ -->
+<div class="modal" id="p1">
+  <a class="bg" href="#" aria-label="Fechar"></a>
+  <a class="close" href="#"><svg class="i"><use href="#x"/></svg></a>
+  <a class="nav prev" href="#p3">‹</a><a class="nav next" href="#p2">›</a>
+  <article class="box">
+    <div class="photo">retrato de Thomas Paine<img src="paine_retrato.jpg" alt="Retrato de Thomas Paine" onerror="this.remove()"></div>
+    <div class="side">
+      <header><div class="ava">P<img src="paine_retrato.jpg" alt="" onerror="this.remove()"></div><div class="who"><b>thomas.paine_1737</b><span>Thetford, Inglaterra</span></div><svg class="i dots"><use href="#more"/></svg></header>
+      <div class="comments"><div class="ava">P<img src="paine_retrato.jpg" alt="" onerror="this.remove()"></div>
+        <div><p><b>thomas.paine_1737</b>Quem sou eu? Thomas Paine, nascido em Thetford, em 1737, filho de um quaker que fazia espartilhos. Em 1774, com uma carta de Benjamin Franklin, parti para Filadélfia. 🇺🇸
+          <span class="tags">#ThomasPaine #Iluminismo #SéculoXVIII #Thetford #Franklin</span></p><time>1774</time></div></div>
+      <div class="bar"><div class="acts"><svg class="i"><use href="#heart"/></svg><svg class="i"><use href="#comment"/></svg><svg class="i"><use href="#send"/></svg><svg class="i sv"><use href="#save"/></svg></div>
+        <div class="likes">1 774 gostos</div><div class="date">Novembro de 1774</div></div>
+      <div class="add"><svg class="i"><use href="#smile"/></svg><span>Adicione um comentário...</span><span class="pub">Publicar</span></div>
+    </div>
+  </article>
+</div>
+
+<!-- ============ Publicação 2 ============ -->
+<div class="modal" id="p2">
+  <a class="bg" href="#" aria-label="Fechar"></a>
+  <a class="close" href="#"><svg class="i"><use href="#x"/></svg></a>
+  <a class="nav prev" href="#p1">‹</a><a class="nav next" href="#p3">›</a>
+  <article class="box">
+    <div class="photo">capa de Common Sense<img src="common_sense.jpg" alt="Capa de Common Sense, 1776" onerror="this.remove()"></div>
+    <div class="side">
+      <header><div class="ava">P<img src="paine_retrato.jpg" alt="" onerror="this.remove()"></div><div class="who"><b>thomas.paine_1737</b><span>Filadélfia, Pensilvânia</span></div><svg class="i dots"><use href="#more"/></svg></header>
+      <div class="comments"><div class="ava">P<img src="paine_retrato.jpg" alt="" onerror="this.remove()"></div>
+        <div><p><b>thomas.paine_1737</b>A minha obra. Em janeiro de 1776 publiquei <i>Common Sense</i>, o panfleto que defendia a independência das colónias e criticava a monarquia hereditária. Depois vieram <i>Rights of Man</i> (1791–92) e <i>The Age of Reason</i> (1794–95). 📜
+          <span class="tags">#CommonSense #RightsOfMan #Iluminismo #Independência #Razão</span></p><time>Janeiro de 1776</time></div></div>
+      <div class="bar"><div class="acts"><svg class="i"><use href="#heart"/></svg><svg class="i"><use href="#comment"/></svg><svg class="i"><use href="#send"/></svg><svg class="i sv"><use href="#save"/></svg></div>
+        <div class="likes">1 776 gostos</div><div class="date">Janeiro de 1776</div></div>
+      <div class="add"><svg class="i"><use href="#smile"/></svg><span>Adicione um comentário...</span><span class="pub">Publicar</span></div>
+    </div>
+  </article>
+</div>
+
+<!-- ============ Publicação 3 ============ -->
+<div class="modal" id="p3">
+  <a class="bg" href="#" aria-label="Fechar"></a>
+  <a class="close" href="#"><svg class="i"><use href="#x"/></svg></a>
+  <a class="nav prev" href="#p2">‹</a><a class="nav next" href="#p1">›</a>
+  <article class="box">
+    <div class="photo">imagem da época<img src="revolucoes.jpg" alt="Imagem da época das revoluções" onerror="this.remove()"></div>
+    <div class="side">
+      <header><div class="ava">P<img src="paine_retrato.jpg" alt="" onerror="this.remove()"></div><div class="who"><b>thomas.paine_1737</b><span>Paris, França</span></div><svg class="i dots"><use href="#more"/></svg></header>
+      <div class="comments"><div class="ava">P<img src="paine_retrato.jpg" alt="" onerror="this.remove()"></div>
+        <div><p><b>thomas.paine_1737</b>O meu tempo. Vivi duas revoluções, a americana e a francesa. Fui eleito para a Convenção Nacional em 1792 e, em 1793, acabei preso em Paris. As ideias do Iluminismo corriam já em panfletos, jornais e cafés, e não só nos salões. ⚖️
+          <span class="tags">#RevoluçãoAmericana #RevoluçãoFrancesa #Iluminismo #Panfletos #Liberdade</span></p><time>1792 – 1794</time></div></div>
+      <div class="bar"><div class="acts"><svg class="i"><use href="#heart"/></svg><svg class="i"><use href="#comment"/></svg><svg class="i"><use href="#send"/></svg><svg class="i sv"><use href="#save"/></svg></div>
+        <div class="likes">1 792 gostos</div><div class="date">1792 – 1794</div></div>
+      <div class="add"><svg class="i"><use href="#smile"/></svg><span>Adicione um comentário...</span><span class="pub">Publicar</span></div>
+    </div>
+  </article>
+</div>
 </body>
 </html>
